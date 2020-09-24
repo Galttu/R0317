@@ -53,7 +53,7 @@ document.getElementById("aa").addEventListener("mouseout", function () {
   alert("Bye bye mouse!");
 });
 
-// harjoitus 3
+// harjoitus 3 kaks ekaa kohtaa
 document.getElementById("textdata").addEventListener("focus", function () {
   document.getElementById("textdata").style.backgroundColor = "red";
   document.getElementById("textdata").value =
