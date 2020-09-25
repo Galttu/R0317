@@ -18,10 +18,6 @@
     width: 50%;
   }
 </style>
-<script>
-
-
-</script>
 
 <h1>Workshop 3: JavaScript Events</h1>
 <hr />
@@ -29,11 +25,9 @@
   guide side by side these exercises. It might also be a
   good idea to save the lines of code you write during the exercises for later use.</p>
 
-
 <h2>Exercise 1</h2>
 <p>&nbsp;Below you will see three buttons. Edit the source code and add an onClick-events to these buttons.</p>
 <p>
-
   <button onclick="nappiYkkonen()">Button 1</button>
   <button onclick="showTable()">Button 2</button>
   <button onclick="kolmasnappi()">Button 3</button>
@@ -42,6 +36,7 @@
 <p> Button 2 opens table in bottom of the page</p>
 
 <script>
+  // Ekan napin funktio
   function nappiYkkonen() {
     var pvm = new Date();
     var oma = "You clicked me!\n";
@@ -52,6 +47,7 @@
 <p id="kolmasnappitaulu"></p>
 
 <script>
+  // Toisen napin funktio
   var a;
   function showTable() {
     if (a == 1) {
@@ -66,11 +62,8 @@
     }
   }
 
-
-
   function harjoitus2() {
-
-
+    // Harjoitus 2 mouseover ja mouseout
     document.getElementById("aa").addEventListener("mouseover", mouseOver);
     document.getElementById("aa").addEventListener("mouseout", mouseOut);
 
@@ -105,6 +98,7 @@
   </xmp>
 
   <script>
+    // Ekan harjoituksen kolmasnappi
     function kolmasnappi() {
       var persons = ["Nyssa P. Skinner", "593-4241 Lacus, St.", "Cape Verde",
         "Camilla F. Strickland", "391-2150 Ac Rd.", "Andorra",
@@ -138,14 +132,13 @@
     "Kelsey D. Clark", "P.O. Box 866, 7793 Aliquet Ave","Bulgaria"
     ];
 
-
   </xmp>
 </ul>
 
 <h2 id="aa">Exercise 2</h2>
 
-
 <script>
+  // Harjoitus kaksi kutsu
   harjoitus2();
 </script>
 
@@ -178,6 +171,7 @@
 <p>Keypresses: <span>0</span></p>
 
 <script>
+  // Harjoitus kolme form funktiot
   document.getElementById("textdata").onfocus = function () { harjoitus3() };
 
   function harjoitus3() {
@@ -197,6 +191,7 @@
 </script>
 
 <script>
+  // Tarkastetaan onko form tyhjä
   function har() {
     var x = document.getElementById("textdata").value;
     if (x == "" || x == null) {
@@ -217,6 +212,7 @@ achieved using addEventListener() -function, <a target="_blank"
 <div id="coordinates"></div>
 
 <script>
+  // Harjoitus 5. Koordit tulee exercise 5 päälle.
   document.getElementById("coordinates").onmousemove = function (event) { harjoitus5(event) };
 
   function harjoitus5(e) {
@@ -242,9 +238,8 @@ document.getElementById("coordinates").innerHTML to achieve this.
 <button onclick="showLocation()">Show Location</button>
 <p id="sijainti"></p>
 
-
-
 <script>
+  // Harjoitus 6 ensimmäinen nappi
   var x = document.getElementById("sijainti");
   function naytaSijainti() {
     if (navigator.geolocation) {
@@ -259,10 +254,8 @@ document.getElementById("coordinates").innerHTML to achieve this.
     x.innerHTML = "Latitude: " + position.coords.latitude +
       "<br>Longitude: " + position.coords.longitude;
     console.log("Latitude:" + position.coords.latitude + ' ' + "Longitude: " + position.coords.longitude);
-
   }
 </script>
-
 
 <li>The first button should check <a href="https://www.w3schools.com/html/html5_geolocation.asp">Geolocation</a> of the
   user, and output it to the console and to the
@@ -277,11 +270,10 @@ document.getElementById("coordinates").innerHTML to achieve this.
 
 <p id="loc">Click to open location map</p>
 
-
 <div id="mapholder"></div>
 
-
 <script>
+  // Harjoitus 6 tokanappi. Tätä varten pitäisi hommata api avain, kokeilin monella tavalla.
   var x = document.getElementById("loc");
   function showLocation() {
     if (navigator.geolocation) {
@@ -305,15 +297,10 @@ document.getElementById("coordinates").innerHTML to achieve this.
       mapTypeControl: false,
       navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
     }
-
     var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
     var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
   }
-
-
-
 </script>
-
 
 <br>
 <table id="example" class="display" cellspacing="0" width="100%">
@@ -359,7 +346,6 @@ document.getElementById("coordinates").innerHTML to achieve this.
 </script>
 <br>
 <script src="https://maps.google.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU"></script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </html>
